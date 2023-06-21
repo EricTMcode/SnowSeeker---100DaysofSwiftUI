@@ -7,14 +7,21 @@
 
 import SwiftUI
 
+enum SortType {
+    case `default`, alphabetical, country, runs
+}
+
 struct ContentView: View {
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
     @StateObject var favorites = Favorites()
     @State private var searchText = ""
     
+    @State private var sortType = SortType.default
+    @State private var showingSortOptions = false
+    
     var body: some View {
         NavigationStack {
-            List(filteredResorts) { resort in
+            List(sortedResorts) { resort in
                 NavigationLink {
                     ResortView(resort: resort)
                 } label: {
@@ -47,6 +54,19 @@ struct ContentView: View {
             }
             .navigationTitle("Resorts")
             .searchable(text: $searchText, prompt: "Search for a resort")
+            .toolbar {
+                Button {
+                    showingSortOptions = true
+                } label: {
+                    Label("Change sort order", systemImage: "arrow.up.arrow.down")
+                }
+            }
+            .confirmationDialog("Sort order", isPresented: $showingSortOptions) {
+                Button("Default") { sortType = .default }
+                Button("Alphabetical") { sortType = .alphabetical }
+                Button("By Country") { sortType = .country }
+                Button("By Runs") { sortType = .runs }
+            }
         }
         .environmentObject(favorites)
     }
@@ -58,6 +78,20 @@ struct ContentView: View {
             return resorts.filter { $0.name.localizedCaseInsensitiveContains(searchText)}
         }
     }
+    
+    var sortedResorts: [Resort] {
+        switch sortType {
+        case .default:
+            return filteredResorts
+        case .alphabetical:
+            return filteredResorts.sorted { $0.name < $1.name }
+        case .country:
+            return filteredResorts.sorted { $0.country < $1.country }
+        case .runs:
+            return filteredResorts.sorted { $0.runs > $1.runs }
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
