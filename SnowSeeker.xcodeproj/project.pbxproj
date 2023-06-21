@@ -18,6 +18,7 @@
 		07A8B7BE2A41D4F200436696 /* SkiDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8B7BD2A41D4F200436696 /* SkiDetailsView.swift */; };
 		07A8B7C02A41D5D600436696 /* ResortDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8B7BF2A41D5D600436696 /* ResortDetailsView.swift */; };
 		07A8B7C22A4312F700436696 /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8B7C12A4312F700436696 /* Facility.swift */; };
+		07A8B7C42A43181D00436696 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8B7C32A43181D00436696 /* Favorites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		07A8B7BD2A41D4F200436696 /* SkiDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiDetailsView.swift; sourceTree = "<group>"; };
 		07A8B7BF2A41D5D600436696 /* ResortDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortDetailsView.swift; sourceTree = "<group>"; };
 		07A8B7C12A4312F700436696 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
+		07A8B7C32A43181D00436696 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				07A8B7C12A4312F700436696 /* Facility.swift */,
+				07A8B7C32A43181D00436696 /* Favorites.swift */,
 				07A8B7B32A41CBBD00436696 /* Resort.swift */,
 			);
 			path = Model;
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A8B7C42A43181D00436696 /* Favorites.swift in Sources */,
 				07A8B7A52A41CADA00436696 /* ContentView.swift in Sources */,
 				07A8B7BE2A41D4F200436696 /* SkiDetailsView.swift in Sources */,
 				07A8B7B42A41CBBD00436696 /* Resort.swift in Sources */,
